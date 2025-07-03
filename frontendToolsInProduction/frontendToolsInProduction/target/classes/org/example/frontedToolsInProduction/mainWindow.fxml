@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.frontedToolsInProduction.MainWindowController">
+
+    <top>
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <ImageView fx:id="backIcon" fitHeight="32" fitWidth="32">
+                <Image url="@images/back.png" />
+            </ImageView>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox alignment="TOP_CENTER" spacing="20">
+
+            <VBox alignment="TOP_CENTER" spacing="10">
+                <Label fx:id="tableName" styleClass="card-title" text="Выберите таблицу" />
+                <ScrollPane fitToHeight="true" fitToWidth="true">
+                    <content>
+                        <TableView fx:id="tableView" prefHeight="500" prefWidth="850" styleClass="table-view" />
+                    </content>
+                </ScrollPane>
+                <HBox.margin>
+                    <Insets left="20.0" />
+                </HBox.margin>
+            </VBox>
+
+            <VBox alignment="TOP_CENTER" spacing="10">
+                <Button fx:id="proceduresButton" prefHeight="40.0" prefWidth="200.0" styleClass="rounded-button" text="Процедуры" />
+
+                <VBox alignment="TOP_CENTER" prefHeight="500" prefWidth="70" spacing="15" styleClass="card">
+                    <Label styleClass="card-title" text="Выбор таблицы" />
+                    <ComboBox fx:id="tableComboBox" prefHeight="30" prefWidth="150">
+                        <VBox.margin>
+                            <Insets top="15.0" />
+                        </VBox.margin>
+                    </ComboBox>
+                    <Separator prefWidth="150" />
+                    <Label styleClass="card-title" text="Панель управления" wrapText="true" />
+                    <Button fx:id="addButton" onAction="#handleAddButtonClick" prefHeight="40.0" prefWidth="140.0" styleClass="large-control-button" text="Добавление">
+                        <VBox.margin>
+                            <Insets top="30.0" />
+                        </VBox.margin>
+                    </Button>
+                    <Button fx:id="editButton" onAction="#handleEditButtonClick" prefHeight="40.0" prefWidth="140.0" styleClass="large-control-button" text="Редактирование" />
+                    <Button fx:id="deleteButton" onAction="#handleDeleteButtonClick" prefHeight="40.0" prefWidth="140.0" styleClass="large-control-button" text="Удаление" />
+                    <VBox.margin>
+                        <Insets top="-5.0" />
+                    </VBox.margin>
+                </VBox>
+
+            </VBox>
+
+        </HBox>
+    </center>
+
+</BorderPane>

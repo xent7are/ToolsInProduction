@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" spacing="20" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.frontedToolsInProduction.AuthorizationController">
+
+    <StackPane maxHeight="400" maxWidth="200">
+        <padding>
+            <Insets top="40" />
+        </padding>
+        <children>
+            <ImageView fx:id="logo" fitHeight="100" fitWidth="250" style="-fx-padding: 100;">
+                <Image url="@images/logo.jpg" />
+            </ImageView>
+        </children>
+    </StackPane>
+
+
+
+    <VBox fx:id="card" alignment="TOP_CENTER" spacing="15" styleClass="card">
+
+        <Label styleClass="card-title" text="Авторизация" />
+
+
+        <HBox alignment="CENTER_LEFT" spacing="22">
+            <Label styleClass="input-label" text="Логин" />
+            <TextField fx:id="loginField" promptText="Введите логин" styleClass="input-field" />
+        </HBox>
+
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label styleClass="input-label" text="Пароль" />
+            <PasswordField fx:id="passwordField" promptText="Введите пароль" styleClass="input-field" />
+        </HBox>
+
+
+        <Button fx:id="entryButton" styleClass="rounded-button" text="Войти">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </Button>
+    </VBox>
+
+
+    <Label styleClass="footer-text" text="Система для работы со складом ПАО Техприбор" />
+</VBox>
