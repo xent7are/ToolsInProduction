@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.frontendToolsInProduction.ProceduresWindowController">
+    <top>
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <ImageView fx:id="backIcon" fitHeight="32" fitWidth="32">
+                <Image url="@images/back.png" />
+            </ImageView>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="8">
+            <Label styleClass="card-title" text="Процедуры" />
+            <HBox alignment="TOP_CENTER" spacing="20" style="-fx-padding: 0 16 0 16;">
+                <VBox alignment="TOP_CENTER" spacing="8" style="-fx-pref-height: 460; -fx-pref-width: 320" styleClass="card">
+                    <VBox spacing="4">
+                        <Label fx:id="getAvailableToolsInStorageLabel" styleClass="common-text"
+                               text="Получение списка инструментов, доступных в месте хранения"
+                               onMouseClicked="#onClickAvailableToolsInStorageLabel"/>
+                        <HBox alignment="CENTER_LEFT" spacing="16">
+                            <TextField fx:id="storageIdGet" promptText="Код места хранения" styleClass="input-field" />
+                            <Button fx:id="getAvailableToolsInStorage" styleClass="rounded-button-min" text="Ок"
+                                    onMouseClicked="#onClickAvailableToolsInStorage"/>
+                        </HBox>
+                    </VBox>
+                    <VBox spacing="4">
+                        <Label fx:id="getToolsInUseByEmployeeLabel" styleClass="common-text"
+                               text="Получение списка инструментов, используемых сотрудником"
+                               onMouseClicked="#onClickToolsInUseByEmployeeLabel"/>
+                        <HBox alignment="CENTER_LEFT" spacing="16">
+                            <TextField fx:id="employeeId" promptText="Код сотрудника" styleClass="input-field" />
+                            <Button fx:id="getToolsInUseByEmployee" styleClass="rounded-button-min" text="Ок"
+                                    onMouseClicked="#onClickToolsInUseByEmployee"/>
+                        </HBox>
+                    </VBox>
+                    <VBox spacing="4">
+                        <Label fx:id="addToolLabel" styleClass="common-text"
+                               text="Добавление инструмента"
+                               onMouseClicked="#onClickAddToolLabel"/>
+                        <TextField fx:id="toolTypeIdAddOne" promptText="Артикул инструмента" styleClass="input-field" style="-fx-max-width: 180"/>
+                        <HBox alignment="CENTER_LEFT" spacing="16">
+                            <TextField fx:id="storageIdAddOne" promptText="Код места хранения" styleClass="input-field"/>
+                            <Button fx:id="addTool" styleClass="rounded-button-min" text="Ок"
+                                    onMouseClicked="#onClickAddTool"/>
+                        </HBox>
+                    </VBox>
+                    <VBox spacing="8">
+                        <Label fx:id="addToolBatchLabel" styleClass="common-text" style="-fx-label-padding: 0 0 -4 0"
+                               text="Добавление партии инструментов"
+                               onMouseClicked="#onClickAddToolBatchLabel"/>
+                        <TextField fx:id="toolTypeIdAddBatch" promptText="Артикул инструмента" styleClass="input-field" style="-fx-max-width: 180"/>
+                        <TextField fx:id="storageIdAddBatch" promptText="Код места хранения" styleClass="input-field" style="-fx-max-width: 180"/>
+                        <HBox alignment="CENTER_LEFT" spacing="16">
+                            <TextField fx:id="count" promptText="Размер партии" styleClass="input-field"/>
+                            <Button fx:id="addToolBatch" text="Ок" styleClass="rounded-button-min"
+                                    onMouseClicked="#onClickAddToolBatch"/>
+                        </HBox>
+                    </VBox>
+                    <VBox spacing="4">
+                        <Label fx:id="writeOffToolLabel" styleClass="common-text"
+                               text="Списание инструмента"
+                               onMouseClicked="#onClickWriteOffToolLabel"/>
+                        <HBox alignment="CENTER_LEFT" spacing="16">
+                            <TextField fx:id="toolId" promptText="Код инструмента" styleClass="input-field"/>
+                            <Button fx:id="writeOffTool" text="Ок" styleClass="rounded-button-min"
+                                    onMouseClicked="#onClickWriteOffTool"/>
+                        </HBox>
+                    </VBox>
+                </VBox>
+
+                <TableView fx:id="tableView" style="-fx-pref-height: 460; -fx-pref-width: 720" styleClass="table-view" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
